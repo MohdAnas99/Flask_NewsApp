@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>My Webpage</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
+
+</head>
+<body style="  background-color : #665050">
+<div style ="height :40px; color:#79d1fc ">
+    <h2 style="font-family:proximanova,Verdana,sans-serif; margin-left:540px"> RESULTS</h2>
+
+</div>
+
+
+<div class="card  text-secondary  mb-3 border-primary mb-3" style="border-width : 3px; border-radius:10px; margin-left:99px; margin-right:50px; margin-top:20px">
+    <div class="card-body" style="margin-left : 20px;">
+        <h4 class="card-title" style="color : black; font-family:proximanova,Verdana,sans-serif;">NLP ANALYSIS</h4>
+        <h4 class="card-text " style="font-family :'Roboto Slab', serif;">The news you have entered has {{ favg }} % similartiy to news article below</h4>
+
+
+    </div>
+    </div>
+
+<ul id="resp">
+    {% for item in resp["value"] %}
+    <li>
+        <div class="container">
+
+
+            <div class="card  text-secondary  mb-3 border-primary mb-3" style="border-width : 3px; border-radius:10px;">
+                <div class = "row" >
+                    <div class="column-left ">
+                        <img class="card-img-left"  style="width: 18rem; margin-left:35px; margin-top:24px; border:1px solid; border-radius:10px; " src="{{item['image']['url']}}" alt="corrupt img">
+                    </div>
+                    <div class ="column-right">
+                        <h5 class="tm" style="color : red; margin-left:50px ; margin-top:35px;">Time : {{item["datePublished"]}} </h5>
+                        <h4 class="m" style="color : blue; margin-left:50px ; margin-top:10px;  font-family:  Courier, monospace; font-weight: bold;">Publisher : {{item["provider"]["name"]}}</h4>
+                        <a href="{{item['url']}}" style="margin-top : 15px ; margin-left : 50px;" class="btn btn-primary">VISIT WEBSITE</a>
+
+                    </div>
+
+
+                <div class="card-body" style="margin-left : 20px;">
+
+                            <h4 class="card-title" style="color : black; font-family:proximanova,Verdana,sans-serif;">&#10097;&#32;{{item["title"]}}</h4>
+                            <p class="card-text bg-light" style="border:2px solid; border-radius:10px; font-family :'Roboto Slab', serif;">{{item["body"]}}</p>
+
+                        </div>
+
+                    </div>
+                  </div>
+                </div>
+
+    </li>
+    {% endfor %}
+</ul>
+
+
+</body>
+</html>

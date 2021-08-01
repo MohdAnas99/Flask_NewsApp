@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fact/Fake</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+      .container {
+        max-width: 1000px;
+      }
+    </style>
+</head>
+<body>
+
+<div style="height:30px;"></div>
+<img style="height:10%; width:20%; margin-left:480px" src="static/me.png" alt="image alt text" />
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-6">
+       <form method="POST" style="font-size:150%;">
+            <input type="text" name="search" placeholder="Search News" style="margin-left:50px"><br>
+
+         <input type="submit" value=" Search "  style="margin-left:130px; margin-top :40px; color: #f9f9f9; background-color: #037f8c"><br>
+     </form>
+    </div>
+</div>
+<script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
+</html>
