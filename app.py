@@ -25,7 +25,7 @@ def form():
         URL = "https://rapidapi.p.rapidapi.com/api/search/NewsSearchAPI"
         HEADERS = {
             "x-rapidapi-host": "contextualwebsearch-websearch-v1.p.rapidapi.com",
-            "x-rapidapi-key": "563b896006msh3f0da36c9b16552p111fcejsn71f8fc4a5dd6"
+            "x-rapidapi-key": "" #add your API key Here
         }
 
         query = search
